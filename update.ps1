@@ -58,7 +58,7 @@ function Add-Spaces {
 }
 
 # take users and format to Js code
-function Format-UsersJS {
+function Format-JS {
 	param ([Parameter(Mandatory)]$UserList)
 	$string = @()
 	$UserList | ForEach-Object {
@@ -76,7 +76,7 @@ function Format-UsersJS {
 $static = Get-Content .\static.js;
 $snip1 = $static[0..17];
 $snip3 = $static[19..21];
-$snip2 = Format-Users
+$snip2 = Format-JS
 $snippet = $snip1 + $snip2 + $snip3;
 
 #export code to JS file
@@ -94,7 +94,7 @@ $users | ForEach-Object {
 
 # Format HTML code
 
-function Format-UsersHTML {
+function Format-HTML {
 	param ([Parameter(Mandatory)]$UserList)
 	$string = @()
 	$UserList | ForEach-Object {
