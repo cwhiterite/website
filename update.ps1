@@ -51,6 +51,32 @@ function Add-User {
 	return $ArrayList;
 }
 
+# take users and format to Js code
+function Format-Users {
+	$string = @()
+	$users | ForEach-Object {
+		$name = $_.Name; $desk = $_.Desk; $x = $_.X; $y = $_.Y;
+		$line = "    else if (x == `"$name`")`n    { coordinates = [($x,$y]; put_marker(coordinates[0], coordinates[1], `"4th`"); }";
+		$string += $line;
+	}
+	return $string;
+}
+
+# Get static js code and then insert users
+$static = Get-Content .\static.js;
+$snip1 = $static[0..17];
+$snip3 = $static[19..21];
+$snip2 = Format-Users
+$snippet = $snip1+$snip2+$snip3;
+
+#export code to JS file
+$snippet | out-file .\output.js
+
+
+
+
+
+
 
 
 

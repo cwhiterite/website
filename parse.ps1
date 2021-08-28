@@ -3,7 +3,7 @@
 # OBJECTS HAVE NAME, DESK, X COORD, & Y COORD
 
 #get string data from file
-$file = Get-Content -Path c:\users\cwhite\desktop\userList2.txt;
+$file = Get-Content -Path .\userList3.txt;
 
 #each line is an object in array
 $file.Split("`n");
@@ -43,3 +43,12 @@ for ($i = 0; $i -lt $desks.count; $i++) {
  $user = [PSCustomObject]@{Name = $names[$i]; Desk = $desks[$i]; X = $xcoords[$i]; Y = $ycoords[$i] };
 	$users.Add($user) | Out-Null;
 }
+
+
+# IMPORT ARRAYLIST - User Objects from CSV
+# User Object has Name, Desk, X, Y properties
+[System.Collections.ArrayList]$users = Import-CSV "C:\temp\users.csv"
+
+# EXPORT ARRAYLIST - User Objects to CSV 
+# User Object has Name, Desk, X, Y properties
+$users | Export-Csv C:\temp\users.csv -NoTypeInformation

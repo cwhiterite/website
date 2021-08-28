@@ -139,7 +139,6 @@ else if (x == "Janna Sims") { coordinates = [318, 1234]; put_marker(coordinates[
 else if (x == "Jazmine Terrazas") { coordinates = [275, 598]; put_marker(coordinates[0], coordinates[1], "3rd"); }
 else if (x == "Jerry Pumphrey") { coordinates = [468, 1508]; put_marker(coordinates[0], coordinates[1], "3rd"); }
 else if (x == "Jessica Celestino") { coordinates = [607, 266]; put_marker(coordinates[0], coordinates[1], "3rd"); }
-else if (x == "Jessica Fisher") { coordinates = [0, 0]; put_marker(coordinates[0], coordinates[1], "4th"); }
 else if (x == "Jessica McRill") { coordinates = [437, 1243]; put_marker(coordinates[0], coordinates[1], "3rd"); }
 else if (x == "Jessica Wunsch") { coordinates = [554, 342]; put_marker(coordinates[0], coordinates[1], "3rd"); }
 else if (x == "JJ Worthington") { coordinates = [222, 649]; put_marker(coordinates[0], coordinates[1], "4th"); }
