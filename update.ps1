@@ -52,11 +52,15 @@ function Add-User {
 }
 
 # take users and format to Js code
-function Format-Users {
+function Format-UsersJS {
+	param ([Parameter(Mandatory)]$UserList)
 	$string = @()
-	$users | ForEach-Object {
-		$name = $_.Name; $desk = $_.Desk; $x = $_.X; $y = $_.Y;
-		$line = "    else if (x == `"$name`")`n    { coordinates = [($x,$y]; put_marker(coordinates[0], coordinates[1], `"4th`"); }";
+	$UserList | ForEach-Object {
+		$name = $_.Name; $x = $_.X; $y = $_.Y;
+		$line = "    else if (x == `"$name`")`n"+
+		"    { coordinates = [($x,$y];"+
+		" put_marker(coordinates[0], coordinates[1],"+
+		" `"4th`"); }";
 		$string += $line;
 	}
 	return $string;
@@ -73,6 +77,32 @@ $snippet = $snip1+$snip2+$snip3;
 $snippet | out-file .\output.js
 
 
+
+# Find Coords for Desk#
+$users | ForEach-Object {
+	if ($_.Desk -eq "") {$_.X="";$_.Y="";}
+	elseif ($_.Desk -eq "") {$_.X="";$_.Y="";}
+	else {$_.X="";$_.Y="";}
+}
+
+
+# Format HTML code
+
+function Format-UsersHTML {
+	param ([Parameter(Mandatory)]$UserList)
+	$string = @()
+	$UserList | ForEach-Object {
+		$name = $_.Name;
+		# Find Ranges of Names by First Initial
+		switch ($name) {
+			condition {}
+		}
+		$line = "                    <option>$name</option>";
+		$string += $line;
+	}
+	return $string;
+	
+}
 
 
 

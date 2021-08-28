@@ -16,7 +16,7 @@ var x = document.getElementById("mySelect").value;
 
 if (x == "Name") 
     {document.getElementById('marker').style.display = 'none';}
-    // INSERT HERE:    else if else if (x == "Zuleth Tena-Cardenas") //
+    // INSERT HERE CODE HERE //
     else
     {document.getElementById('marker').style.display = 'none';} 
 }

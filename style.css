@@ -1,0 +1,46 @@
+button,
+input,
+select,
+label {
+    font-family: Arial;
+    font-size: 290%;
+    height: 80px;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 50px;
+}
+
+div.static {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 980px;
+    height: 1650px;
+    background-image: url("./3rdFloor2.svg");
+    background-size: 100% 100%
+}
+
+div.centered {
+    position: relative;
+    top: 50px;
+    width: 880px;
+    margin: auto;
+    text-align: right;
+}
+
+div.left {
+    position: relative;
+    top: 925px;
+    left: 50px;
+    width: 190px;
+}
+
+div.updated {
+    position: absolute;
+    top: 200px;
+    width: 918px;
+    text-align: right;
+    color: #999999;
+    font-family: Arial;
+    font-size: 32px;
+}
