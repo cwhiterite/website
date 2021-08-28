@@ -51,16 +51,22 @@ function Add-User {
 	return $ArrayList;
 }
 
+function Add-Spaces {
+	param ([Parameter(Mandatory)][int32]$int)
+	$spaces = " " * $int;
+	return $spaces;
+}
+
 # take users and format to Js code
 function Format-UsersJS {
 	param ([Parameter(Mandatory)]$UserList)
 	$string = @()
 	$UserList | ForEach-Object {
 		$name = $_.Name; $x = $_.X; $y = $_.Y;
-		$line = "    else if (x == `"$name`")`n"+
-		"    { coordinates = [($x,$y];"+
-		" put_marker(coordinates[0], coordinates[1],"+
-		" `"4th`"); }";
+		$line = (Add-Spaces 4) + "else if (x == `"$name`")`n" +
+		(Add-Spaces 4) + "{ coordinates = [($x,$y];" +
+		(Add-Spaces 1) + "put_marker(coordinates[0], coordinates[1]," +
+		(Add-Spaces 1) + "`"4th`"); }";
 		$string += $line;
 	}
 	return $string;
@@ -71,7 +77,7 @@ $static = Get-Content .\static.js;
 $snip1 = $static[0..17];
 $snip3 = $static[19..21];
 $snip2 = Format-Users
-$snippet = $snip1+$snip2+$snip3;
+$snippet = $snip1 + $snip2 + $snip3;
 
 #export code to JS file
 $snippet | out-file .\output.js
@@ -80,9 +86,9 @@ $snippet | out-file .\output.js
 
 # Find Coords for Desk#
 $users | ForEach-Object {
-	if ($_.Desk -eq "") {$_.X="";$_.Y="";}
-	elseif ($_.Desk -eq "") {$_.X="";$_.Y="";}
-	else {$_.X="";$_.Y="";}
+	if ($_.Desk -eq "") { $_.X = ""; $_.Y = ""; }
+	elseif ($_.Desk -eq "") { $_.X = ""; $_.Y = ""; }
+	else { $_.X = ""; $_.Y = ""; }
 }
 
 
@@ -97,7 +103,7 @@ function Format-UsersHTML {
 		switch ($name) {
 			condition {}
 		}
-		$line = "                    <option>$name</option>";
+		$line = (Add-Spaces 20) + "<option>$name</option>";
 		$string += $line;
 	}
 	return $string;
