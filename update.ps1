@@ -24,10 +24,7 @@ function Remove-User {
     if ($ArrayList[$i].Name -eq $UserName) {
       $ArrayList.RemoveAt($i);
     }
-    else {
-      Write-Host "$UserName is not on the map!"
-
-    }
+    else { Write-Host "$UserName is not on the map!" }
   }
   $ArrayList = $ArrayList | Sort-Object -Property Name;
   return $ArrayList;
@@ -43,12 +40,10 @@ function Add-User {
     [Parameter(Mandatory)]$UserDesk,
     [Parameter(Mandatory)]$UserList
   )
-
   $ArrayList = $UserList.Clone();
 
   $ArrayList | ForEach-Object {
     if ($UserDesk -eq $_.Desk) {
-      $desk = $_.Desk;
       if ($_.X -eq "" -or $_.Y -eq "") {
         $desk = $_.Desk;
         Write-Host "Coords not found for desk: $desk!"
@@ -57,8 +52,6 @@ function Add-User {
         if ($_.Name -eq "") {
           $user = [PSCustomObject]@{Name = $UserName; Desk = $UserDesk; };
           $ArrayList.Add($user) | Out-Null;
-          $ArrayList = $ArrayList | Sort-Object -Property Name;
-          return $ArrayList;
         }
         else {
           $name = $_.Name;
@@ -67,6 +60,8 @@ function Add-User {
       }
     }
   }
+  $ArrayList = $ArrayList | Sort-Object -Property Name;
+  return $ArrayList;
 }
 
 function Add-Spaces {
@@ -77,27 +72,36 @@ function Add-Spaces {
 
 # take users and format to Js code
 function Format-JS {
-  param ([Parameter(Mandatory)]$UserList)
-  $string = @()
-  $UserList | ForEach-Object {
-    $name = $_.Name; $x = $_.X; $y = $_.Y;
-    $line = (Add-Spaces 4) + "else if (x == `"$name`")" +
-    (Add-Spaces 1) + "{ put_marker($x, $y, `"4th`"); }";
-    $string += $line;
+  param (
+    [Parameter(Mandatory)]$List,
+    [Parameter(Mandatory)]$File
+  )
+  $static = Get-Content .\static.js;
+  $snip1 = $static[0..17];
+  $snip2 = @(); #Format-JS -List $users
+  $snip3 = $static[19..20];
+
+  $List | ForEach-Object {
+    $name = $_.Name; $desk = $_.Desk;
+    $x = $_.X; $y = $_.Y;
+    if ($name -ne "") {
+      if ($desk -like "3*") {
+        $line = (Add-Spaces 4) + "else if (x == `"$name`")" +
+        (Add-Spaces 1) + "{ put_marker($x, $y, `"3rd`"); }";
+      }
+      else {
+        $line = (Add-Spaces 4) + "else if (x == `"$name`")" +
+        (Add-Spaces 1) + "{ put_marker($x, $y, `"4th`"); }";
+      }
+      $snip2 += $line;
+    }
   }
-  return $string;
+  $snippet = $snip1 + $snip2 + $snip3;
+  $snippet | out-file $File;
 }
 
-# Get static js code and then insert users
-$static = Get-Content .\static.js;
-$snip1 = $static[0..17];
-$snip3 = $static[19..20];
-$snip2 = Format-JS -UserList $users
-$snippet = $snip1 + $snip2 + $snip3;
-
-#export code to JS file
-$snippet | out-file .\output.js
-
+$output = ".\output.js"
+Format-JS -List $users -File $output;
 
 # Find Coords for Desk#
 # $users | ForEach-Object {
@@ -154,13 +158,11 @@ function Format-HTML {
         $line = (Add-Spaces 10) + "<option>$name</option>";
         $snip2 += $line;
       }
-    }
-    $snippet = $snip1 + $snip2 + $snip3 + $snip4 + $snip5;
+    } 
   }
+  $snippet = $snip1 + $snip2 + $snip3 + $snip4 + $snip5;
   $snippet | out-file $File;
 }
-
-
 
 #Import users from csv
 function Get-Users {
