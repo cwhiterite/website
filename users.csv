@@ -1,5 +1,4 @@
 Name,Desk,X,Y
-,,,
 Andrew Cole,3,531,1225
 Aspen Conference,3,488,606
 Chris Coyne,3,662,1126
@@ -10,7 +9,6 @@ Laura Beuthel,3,527,1052
 Rocklahoma Conference,3,427,955
 Steven Trapani,3,659,1175
 Winterpark Conference,3,356,979
-,,,
 Amber Lewandowski,3.1,623,226
 Jaden Leiker,3.2,593,237
 Mariam Kyabou,3.3,562,244
@@ -20,7 +18,7 @@ Alonso Vargas Gross,3.6,638,259
 Jessica Celestino,3.7,607,266
 Kyla Barela,3.8,575,277
 Melissa Laurienti,3.9,546,285
-Taylor Lyon,3.1,516,296
+Taylor Lyon,3.10,516,296
 ,3.11,,
 ,3.12,,
 Jaemi Paschal,3.13,584,331
@@ -30,7 +28,7 @@ Tori Paris,3.16,629,355
 Sydney Abeyta,3.17,598,365
 Jordyn White,3.18,567,372
 ,3.19,,
-Wesley Barron,3.2,669,402
+Wesley Barron,3.20,669,402
 April De La Fuente,3.21,637,411
 Padraig O'Flannery,3.22,607,420
 Sean Morrell,3.23,577,426
@@ -43,7 +41,7 @@ Collin Bellum,3.29,725,479
 ,3.030,,
 Stephanie Kline,3.031,660,498
 ,3.032,,
-,3.3,,
+,3.30,,
 Abigail Parris,3.31,705,521
 ,3.32,,
 ,3.33,,
@@ -82,7 +80,7 @@ Fadi Alasbahi,3.65,878,1031
 Kamela Gjinaj,3.67,818,1031
 ,3.68,,
 ,3.69,,
-,3.7,,
+,3.70,,
 ,3.71,,
 ,3.72,,
 Kelly Jordan,3.73,878,1111
@@ -102,13 +100,13 @@ Corey Scott,3.85,815,1233
 ,3.87,,
 ,3.88,,
 ,3.89,,
-Chase Henry,3.9,786,1255
+Chase Henry,3.90,786,1255
 Amber McDondle,3.91,881,1295
 ,3.92,,
 Brittany Tucker,3.93,816,1295
 Dylan Wheeler,3.98,784,1317
 Princess Ajibade,3.99,878,1377
-,3.1,,
+,3.100,,
 Kiah Rouse,3.101,817,1379
 ,3.102,,
 ,3.103,,
@@ -118,7 +116,7 @@ Lyzette Gonzales,3.104,847,1398
 ,3.107,,
 Kathleen Salomonson,3.108,866,1468
 Ty Teply,3.109,884,1511
-Stacie Anderson,3.11,852,1511
+Stacie Anderson,3.110,852,1511
 ,3.111,,
 Matt Gonzales,3.112,884,1533
 Cindy Arias,3.113,852,1531
@@ -128,14 +126,14 @@ Irene Diggins,3.115,373,1528
 ,3.117,,
 Gana Sukhmyagmar,3.118,466,1536
 ,3.119,,
-,3.12,,
+,3.120,,
 ,3.121,,
 Jerry Pumphrey,3.222,468,1508
 Wil-an Losande,3.223,336,1468
 Michael Cuasito,3.227,468,1466
 Tasha Nguyen,3.228,336,1439
 Cole Crowl,3.229,374,1445
-,3.23,,
+,3.230,,
 Samantha Jeski,3.231,437,1445
 ,3.232,,
 Michelle Brusco,3.233,311,1401
@@ -145,7 +143,7 @@ Tandra Caldwell,3.235,373,1403
 Lily Yesayan,3.237,436,1402
 ,3.238,,
 ,3.239,,
-Jacqueline Dohn,3.24,341,1385
+Jacqueline Dohn,3.240,341,1385
 ,3.241,,
 Marcus Loureiro-Estrada,3.242,404,1382
 ,3.243,,
@@ -155,7 +153,7 @@ Kirk Usui,3.246,373,1321
 ,3.247,,
 Ashley Christner,3.248,437,1320
 ,3.249,,
-Carisa Roth,3.25,336,1298
+Carisa Roth,3.250,336,1298
 ,3.251,,
 Navneet Saini,3.252,406,1301
 ,3.253,,
@@ -165,7 +163,7 @@ Dimpy Gala,3.254,468,1301
 ,3.257,,
 ,3.258,,
 Jessica McRill,3.259,437,1243
-,3.26,,
+,3.260,,
 ,3.261,,
 Erin Monty,3.262,340,1221
 ,3.263,,
@@ -175,7 +173,7 @@ Erin Monty,3.262,340,1221
 Alayna Doskins,3.267,337,1184
 ,3.268,,
 ,3.269,,
-,3.27,,
+,3.270,,
 ,3.271,,
 Cavanaugh Hannan,3.272,336,1156
 Sonja Hoff,3.273,374,1158
@@ -205,7 +203,7 @@ Dana Doncer,3.296,395,782
 Brandon Bradley,3.297,285,779
 ,3.298,,
 Robby Sanders,3.299,350,761
-Ivy Edmonds,3.3,380,751
+Ivy Edmonds,3.300,380,751
 Caitlyn Grathwohl,3.301,250,733
 Ereka Maglambayan,3.302,281,724
 Mikayla Rice,3.303,312,716
@@ -214,18 +212,17 @@ Sarah Lussier,3.306,268,693
 Sean Allen,3.307,297,684
 Halie Malacka,3.308,329,676
 Morgan Diettert,3.309,224,650
-Tabitha Lazarte,3.31,259,639
+Tabitha Lazarte,3.310,259,639
 Satoko Pallarito,3.311,289,630
 ,3.312,,
 Angela Byrnes,3.313,210,618
 ,3.314,,
 Jazmine Terrazas,3.315,275,598
 Amanda Burget,3.316,302,589
-,,,
 ,3.317,,
 ,3.318,,
 Kiersten Greguric,3.319,238,553
-PsyNia Jefferson,3.32,269,545
+PsyNia Jefferson,3.320,269,545
 Alex Welch,3.321,162,541
 Jade Mayo,3.322,194,532
 Shea Bowers,3.323,223,522
@@ -235,7 +232,7 @@ Samantha Aylward,3.324,255,514
 ,3.327,,
 ,3.328,,
 Sloan McLin,3.329,136,454
-Angel Phares,3.33,171,444
+Angel Phares,3.330,171,444
 ,3.331,,
 ,3.332,,
 ,3.333,,
@@ -245,8 +242,7 @@ Katy Coven,3.336,193,382
 Noah Robinson,3.337,86,377
 Susan Carver,3.338,119,368
 ,3.339,,
-Ashley Ball,3.34,179,351
-,,,
+Ashley Ball,3.340,179,351
 Brittany Huber,4,528,617
 Courtney Reyes (HR),4,479,666
 Eldora Conference,4,428,955
@@ -254,7 +250,6 @@ Jacob Lewien,4,778,653
 Jacob Toman Ibarra,4,497,964
 Lauren Jopson,4,701,1431
 Loveland Conference,4,357,980
-,,,
 Erich Staats,4.1,622,224
 Kimberly Moore,4.2,588,236
 Ashley Gamble,4.3,558,242
@@ -273,8 +268,7 @@ Brian Richie,4.13,596,326
 Kenny Compton,4.14,564,338
 Bridget Frame,4.15,536,345
 Ashley Ortega,4.16,676,339
-Gabriella Martyna,4.17,641,351
-Matin Rabbani,4.17,641,350
+Gabriella Martyna,4.16,678,341
 Matheson Lindley,4.18,610,358
 Johnny Woodson,4.19,579,365
 Adam Ogletree,4.20,550,374
@@ -302,7 +296,6 @@ Emily Harrison,4.40,625,543
 Scott Martley,4.41,776,559
 Robert Larsen,4.42,741,570
 Andrea Newman,4.43,710,579
-Enrica Canaday,4.43,710,579
 Lucas Martinez,4.44,680,588
 Karsten Talaber,4.45,648,598
 Liliana Vidal,4.46,793,594
@@ -312,7 +305,7 @@ Nicole Esquivel,4.49,695,618
 Matthew Maher,4.50,664,627
 Christie Apon,4.51,813,642
 Alexa Reed,4.52,777,653
-,4.53,,
+Enrica Canaday,4.53,749,663
 Joshua Quintana,4.54,717,671
 Megan Brockway,4.55,686,678
 Linda Sirchia,4.56,827,677
@@ -417,7 +410,7 @@ Kelli Moore,4.153,219,524
 Sital Sharma,4.154,249,511
 Dolly Bailey,4.155,136,490
 ,4.156,,
-,4.157,,
+Matin Rabbani,4.157,195,474
 ,4.158,,
 ,4.159,,
 ,4.160,,
@@ -425,18 +418,17 @@ Dolly Bailey,4.155,136,490
 ,4.162,,
 Dana Stanley,4.163,108,407
 Kelsey Houchen,4.164,145,396
+,4.165,,
 Alex Clark,4.166,204,381
 Andrew Vossler,4.167,96,374
 Courtney Johnson,4.168,129,367
+,4.169,,
 Colleen King,4.170,189,347
-,,,
-,,,
 ,3A,,
 ,3B,,
 Kayla Cunningham,3C,632,1546
 Michael Majoue,3D,554,1545
 ,3E,,
-,,,
 Ayanle Buni,3aa,457,346
 Kalie DePold,3bb,514,464
 Derek Caldwell,3cc,548,544
@@ -456,7 +448,6 @@ Angela Pastor,3pp,543,1136
 Kelsey Hays,3qq,427,674
 ,3rr,,
 Zellie Elliott,3ss,392,589
-,,,
 Jordan Young,4A,414,278
 Dan Moorhead,4B,866,977
 Donald Gregg,4C,863,1044
@@ -469,7 +460,6 @@ Dave Anttila,4I,685,1547
 Lacey Huckle,4J,606,1550
 Paige Harrington,4K,529,1551
 ,4L,,
-,,,
 Adeline Cooper,4aa,512,464
 Madison Willers,4ab,375,371
 Ivan Kuo,?,475,919
