@@ -1,0 +1,43 @@
+
+FORMAT
+shift+alt+f : format
+ctrl+k ctrl+x : trim trailing whitespace
+
+COMMENTS
+ctrl+/ : toggles comments
+
+SELECTION
+shift+alt+right : select word, line, all
+ctrl+l : select line
+shift+alt+mouse : block select
+shift+up/down : select lines up, down
+shift+right : select characters
+ctrl+shift+l : select all occurances of word
+
+DELETION
+ctrl+shift+k : delete line
+
+CURSORS
+ctrl+alt+up/down : adds cursors up/down
+ctrl+left/right: move next word
+alt+click : insert cursors
+
+VSCODE UI
+F11 : toggle fullscreen
+shift+alt+0 : toggle verticle editor
+ctrl+B : toggles SIDEBAR
+ctrl+T : toggles TERMINAL
+ctrl+, : open settings
+ctrl+k ctrl+s : keyboard shorcuts
+
+MOVING
+alt+up/down : move line up/down
+alt+shift+down : copy line/lines up/down
+
+FOLDING
+ctrl+k ctrl+j : unfold all
+ctrl+k ctrl+0 : fold all
+
+FIND/REPLACE
+ctrl+f : find
+ctrl+r : replace 

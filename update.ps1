@@ -1,6 +1,4 @@
 
-
-
 # IMPORT ARRAYLIST - User Objects from CSV
 # User Object has Name, Desk, X, Y properties
 [System.Collections.ArrayList]$users = Import-CSV "C:\temp\users.csv"
@@ -31,7 +29,7 @@ function Remove-User {
 }
 
 # ADDS USER - By Name to Cloned ArrayList, Sorts, Returns Clone
-# Assigned variable needs to be statically typed as an ArrayList 
+# Assigned variable needs to be statically typed as an ArrayList
 # [System.Collections.ArrayList]$? = Add-User -UserName "?" -UserDesk "?" -UserList "?"
 function Add-User {
   [CmdletBinding()]
@@ -44,7 +42,7 @@ function Add-User {
   $ArrayList = $UserList.Clone();
 
   $user = [PSCustomObject]@{
-    Name = $UserName; Desk = $UserDesk; X = "0"; Y = "0" 
+    Name = $UserName; Desk = $UserDesk; X = "0"; Y = "0"
   };
   $ArrayList.Add($user) | Out-Null;
   $ArrayList = $ArrayList | Sort-Object -Property Name;
@@ -72,14 +70,13 @@ function Format-JS {
 
 # Get static js code and then insert users
 $static = Get-Content .\static.js;
-$snip1 = $static[0..16];
-$snip3 = $static[18..19];
+$snip1 = $static[0..1];
+$snip3 = $static[19..20];
 $snip2 = Format-JS -UserList $users
 $snippet = $snip1 + $snip2 + $snip3;
 
 #export code to JS file
 $snippet | out-file .\output.js
-
 
 
 # Find Coords for Desk#
@@ -106,22 +103,14 @@ function Format-HTML {
     $string += $line;
   }
   return $string;
-	
+
 }
 
 
 
 
-
-
-
-
-
-
-
-
 #Import users from csv
-function Get-Users {	
+function Get-Users {
   Import-Csv C:\temp\users.csv | ForEach-Object {
     $user = [PSCustomObject]@{name = $_.name; desk = $_.desk; x = $_.x; y = $_.y };
     $users += $user;
@@ -137,12 +126,13 @@ function Set-Users {
   Write-Host $user;
 }
 
-#TODO : 
-# DONE: Function that adds users from csv with name, desk, inserts into users ArrayList 
+#TODO :
+# DONE: Function that adds users from csv with name, desk, inserts into users ArrayList
 #		sorted alphabetically
 #		determine what js needs changed, what stays the same
 #		format js and html using users array, name, desk, x, y
 #		push changes to github
 
 #Set-Users
+
 
