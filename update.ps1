@@ -90,6 +90,7 @@ $users | ForEach-Object {
 }
 
 
+
 # Format HTML code
 
 function Format-HTML {
@@ -107,10 +108,6 @@ function Format-HTML {
   return $string;
 	
 }
-
-
-
-
 
 
 
