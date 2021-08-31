@@ -1,14 +1,15 @@
 function put_marker(from_left, from_top, floor) {
-    with (document.getElementById('marker')) {
-        style.left = from_left + "px";
-        style.top = from_top + "px";
-        style.display = "block";
 
-        if (floor == "3rd")
-            document.getElementById('map').style.backgroundImage = "url(./3rdFloor2.svg)";
-        else if (floor == "4th")
-            document.getElementById('map').style.backgroundImage = "url(./4thFloor2.svg)";
-    }
+  var marker = document.getElementById('marker');
+  marker.style.left = from_left + "px";
+  marker.style.top = from_top + "px";
+  marker.style.display = "block";
+
+  var map = document.getElementById('map');
+  if (floor == "3rd")
+    map.style.backgroundImage = "url(./3rdFloor2.svg)";
+  else if (floor == "4th")
+    map.style.backgroundImage = "url(./4thFloor2.svg)";
 }
 
 function find_desk() {
