@@ -8,54 +8,50 @@ $users = $users | Sort-Object -Property Name;
 # User Object has Name, Desk, X, Y properties
 $users | Export-Csv C:\temp\users.csv -NoTypeInformation
 
-# REMOVES USER - By Name from Cloned Arraylist, Returns Clone
-# Assigned variable needs to be statically typed as an ArrayList
-# [System.Collections.ArrayList]$? = Remove-User -UserName "?" -UserList "?"
-function Remove-User {
+
+
+# [System.Collections.ArrayList]$? = 
+# Remove-User -UserName "?" -UserList "?"
+function Remove-Name {
   [CmdletBinding()]
   param (
-    [Parameter(Mandatory)]$UserName,
-    [Parameter(Mandatory)]$UserList
+    [Parameter(Mandatory)]$Name,
+    [Parameter(Mandatory)]$List
   )
 
-  $ArrayList = $UserList.Clone();
+  $ArrayList = $List.Clone();
 
-  for ($i = 0; $i -lt $ArrayList.Count; $i++) {
-    if ($ArrayList[$i].Name -eq $UserName) {
-      $ArrayList.RemoveAt($i);
-    }
-    else { Write-Host "$UserName is not on the map!" }
-  }
+  $ArrayList | ForEach-Object {
+    if ($_.Name -eq $Name) { $_.Name = ""; }
+    else { Write-Host "$Name is not on the map!" }
+  } 
   $ArrayList = $ArrayList | Sort-Object -Property Name;
   return $ArrayList;
 }
 
-# ADDS USER - By Name to Cloned ArrayList, Sorts, Returns Clone
-# Assigned variable needs to be statically typed as an ArrayList
-# [System.Collections.ArrayList]$? = Add-User -UserName "?" -UserDesk "?" -UserList "?"
-function Add-User {
+
+# [System.Collections.ArrayList]$? = 
+# Add-User -UserName "?" -UserDesk "?" -UserList "?"
+function Add-Name {
   [CmdletBinding()]
   param (
-    [Parameter(Mandatory)]$UserName,
-    [Parameter(Mandatory)]$UserDesk,
-    [Parameter(Mandatory)]$UserList
+    [Parameter(Mandatory)]$Name,
+    [Parameter(Mandatory)]$Desk,
+    [Parameter(Mandatory)]$List
   )
-  $ArrayList = $UserList.Clone();
+  $ArrayList = $List.Clone();
 
   $ArrayList | ForEach-Object {
-    if ($UserDesk -eq $_.Desk) {
+    if ($Desk -eq $_.Desk) {
       if ($_.X -eq "" -or $_.Y -eq "") {
-        $desk = $_.Desk;
-        Write-Host "Coords not found for desk: $desk!"
+        $d = $_.Desk;
+        Write-Host "Coords not found for desk: $d!"
       }
       else {
-        if ($_.Name -eq "") {
-          $user = [PSCustomObject]@{Name = $UserName; Desk = $UserDesk; };
-          $ArrayList.Add($user) | Out-Null;
-        }
+        if ($_.Name -eq "") { $_.Name = $Name; }
         else {
-          $name = $_.Name;
-          Write-Host "Desk: $desk is currently occupied by $name!"
+          $n = $_.Name;
+          Write-Host "Desk: $d is currently occupied by $n!"
         }
       }
     }

@@ -12,15 +12,17 @@ ctrl+l : select line
 shift+alt+mouse : block select
 shift+up/down : select lines up, down
 shift+right : select characters
-ctrl+shift+l : select all occurances of word
+ctrl+shift+l : select occurances of word
 
 DELETION
 ctrl+shift+k : delete line
 
 CURSORS
 ctrl+alt+up/down : adds cursors up/down
+shift+alt+I : add cursor to line end
 ctrl+left/right: move next word
 alt+click : insert cursors
+shift+alt+I : add cursor at end
 
 VSCODE UI
 F11 : toggle fullscreen
