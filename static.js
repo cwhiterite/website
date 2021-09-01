@@ -12,9 +12,10 @@ function put_marker(from_left, from_top, floor) {
 }
 
 function find_desk() {
-    var x = document.getElementById("mySelect").value;
+  var x = document.getElementById("mySelect").value;
 
-    if (x == "Name") { document.getElementById('marker').style.display = 'none'; }
+  if (x == "Name") 
+    { document.getElementById('marker').style.display = 'none'; }
     // INSERT HERE CODE HERE //
-    else { document.getElementById('marker').style.display = 'none'; }
+  else { document.getElementById('marker').style.display = 'none'; }
 }

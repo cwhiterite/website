@@ -69,21 +69,23 @@ function Format-JS {
     [Parameter(Mandatory)]$File
   )
   $static = Get-Content .\static.js;
-  $snip1 = $static[0..16];
+  $snip1 = $static[0..17];
   $snip2 = @(); #Format-JS -List $users
-  $snip3 = $static[18..19];
+  $snip3 = $static[19..20];
 
   $List | ForEach-Object {
     $name = $_.Name; $desk = $_.Desk;
     $x = $_.X; $y = $_.Y;
     if ($name -ne "") {
       if ($desk -like "3*") {
-        $line = (Add-Spaces 4) + "else if (x == `"$name`")" +
-        (Add-Spaces 1) + "{ put_marker($x, $y, `"3rd`"); }";
+        $line = (Add-Spaces 2) + "else if (x == `"$name`")`n" +
+        (Add-Spaces 4) + "{coordinates = [$x,$y];" +
+        (Add-Spaces 1) + "put_marker(coordinates[0], coordinates[1], `"3rd`"); }";
       }
       else {
-        $line = (Add-Spaces 4) + "else if (x == `"$name`")" +
-        (Add-Spaces 1) + "{ put_marker($x, $y, `"4th`"); }";
+        $line = (Add-Spaces 2) + "else if (x == `"$name`")`n" +
+        (Add-Spaces 4) + "{coordinates = [$x,$y];" +
+        (Add-Spaces 1) + "put_marker(coordinates[0], coordinates[1], `"4th`"); }";
       }
       $snip2 += $line;
     }
