@@ -1,11 +1,8 @@
 
-# IMPORT ARRAYLIST - User Objects from CSV
-# User Object has Name, Desk, X, Y properties
+
 [System.Collections.ArrayList]$users = Import-CSV ".\users.csv"
 $users = $users | Sort-Object -Property Name;
 
-# EXPORT ARRAYLIST - User Objects to CSV
-# User Object has Name, Desk, X, Y properties
 $users | Export-Csv C:\temp\users.csv -NoTypeInformation
 
 
@@ -28,7 +25,6 @@ function Remove-Name {
   $ArrayList = $ArrayList | Sort-Object -Property Name;
   return $ArrayList;
 }
-
 
 # [System.Collections.ArrayList]$? = 
 # Add-User -UserName "?" -UserDesk "?" -UserList "?"
@@ -96,15 +92,7 @@ function Format-JS {
   $snippet | out-file $File;
 }
 
-$output = ".\output.js"
-Format-JS -List $users -File $output;
 
-# Find Coords for Desk#
-# $users | ForEach-Object {
-#   if ($_.Desk -eq "") { $_.X = ""; $_.Y = ""; }
-#   elseif ($_.Desk -eq "") { $_.X = ""; $_.Y = ""; }
-#   else { $_.X = ""; $_.Y = ""; }
-# }
 
 
 function Get-Alphabet {
@@ -118,19 +106,6 @@ function Get-Alphabet {
   return $alpha;
 }
 
-# Format HTML code
-$alpha = Get-Alphabet;
-$ac = $alpha[0..2];
-$dj = $alpha[3..9];
-$ko = $alpha[10..14];
-$pz = $alpha[15..26];
-
-$index = ".\index.html"
-$page2 = ".\page2.html"
-$page3 = ".\page3.html"
-$page4 = ".\page4.html"
-
-#takes a range of letters, formats names into html code, exports to file
 function Format-HTML {
   param (
     [Parameter(Mandatory)]$List,
@@ -160,7 +135,42 @@ function Format-HTML {
   $snippet | out-file $File;
 }
 
-#Import users from csv
+
+
+[System.Collections.ArrayList]$users = Import-CSV ".\users.csv"
+$users = $users | Sort-Object -Property Name;
+
+$users | Export-Csv C:\temp\users.csv -NoTypeInformation
+
+$output = ".\javascript.js"
+Format-JS -List $users -File $output;
+
+$alpha = Get-Alphabet;
+$ac = $alpha[0..2];
+$dj = $alpha[3..9];
+$ko = $alpha[10..14];
+$pz = $alpha[15..26];
+
+$index = ".\index.html"
+$page2 = ".\page2.html"
+$page3 = ".\page3.html"
+$page4 = ".\page4.html"
+
+Format-HTML -Range $ac -List $users -File $index -Date "9/1"
+Format-HTML -Range $dj -List $users -File $page2 -Date "9/1"
+Format-HTML -Range $ko -List $users -File $page3 -Date "9/1"
+Format-HTML -Range $pz -List $users -File $page4 -Date "9/1"
+
+#TODO :
+#		push changes to github
+
+
+
+
+
+
+
+
 function Get-Users {
   Import-Csv C:\temp\users.csv | ForEach-Object {
     $user = [PSCustomObject]@{name = $_.name; desk = $_.desk; x = $_.x; y = $_.y };
@@ -177,18 +187,5 @@ function Set-Users {
   Write-Host $user;
 }
 
-Format-HTML -Range $ac -List $users -File $index -Date "8/31"
-Format-HTML -Range $dj -List $users -File $page2 -Date "8/31"
-Format-HTML -Range $ko -List $users -File $page3 -Date "8/31"
-Format-HTML -Range $pz -List $users -File $page4 -Date "8/31"
-
-#TODO :
-# DONE: Function that adds users from csv with name, desk, inserts into users ArrayList
-#		sorted alphabetically
-#		determine what js needs changed, what stays the same
-#		format js and html using users array, name, desk, x, y
-#		push changes to github
-
-#Set-Users
 
 
