@@ -69,9 +69,9 @@ function Format-JS {
     [Parameter(Mandatory)]$File
   )
   $static = Get-Content .\static.js;
-  $snip1 = $static[0..17];
+  $snip1 = $static[0..16];
   $snip2 = @(); #Format-JS -List $users
-  $snip3 = $static[19..20];
+  $snip3 = $static[18..19];
 
   $List | ForEach-Object {
     $name = $_.Name; $desk = $_.Desk;
