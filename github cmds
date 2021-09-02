@@ -1,0 +1,30 @@
+GITHUB BASICS
+
+just typing 'git' will show all commands
+
+CLONE : clones a repo
+- navigate to folder you want repo created in
+- from your repo on github > repo > Code > Clone > Copy address
+- git clone https://github.com/cwhiterite/cwhiterite.github.io.git
+- Open folder in Visual Studio Code
+
+STATUS : gets status of local branch
+- git status
+
+ADD : adds file or all files to be commited
+- git add test.txt   
+- git add . 
+- git add -A
+
+RESTORE : discard changes
+- git restore test.txt
+
+COMMIT : commit with message, ready to push
+- git commit -m "Hello World!"
+- if forgot -m, Esc :wq will return to cmd
+
+PUSH : pushes commits to github.com repo 
+- git push
+
+PULL : pulls files down from github.com
+- git pull

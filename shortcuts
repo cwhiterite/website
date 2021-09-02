@@ -7,22 +7,21 @@ COMMENTS
 ctrl+/ : toggles comments
 
 SELECTION
-shift+alt+right : select word, line, all
+shift+alt+left/right : expand/shrink selection
 ctrl+l : select line
 shift+alt+mouse : block select
 shift+up/down : select lines up, down
-shift+right : select characters
-ctrl+shift+l : select occurances of word
+shift+left/right : select characters
+ctrl+shift+L : select occurances of word
 
 DELETION
-ctrl+shift+k : delete line
+ctrl+shift+K : delete line
 
 CURSORS
 ctrl+alt+up/down : adds cursors up/down
 shift+alt+I : add cursor to line end
 ctrl+left/right: move next word
 alt+click : insert cursors
-shift+alt+I : add cursor at end
 
 VSCODE UI
 F11 : toggle fullscreen
@@ -30,16 +29,30 @@ shift+alt+0 : toggle verticle editor
 ctrl+B : toggles SIDEBAR
 ctrl+T : toggles TERMINAL
 ctrl+, : open settings
-ctrl+k ctrl+s : keyboard shorcuts
+ctrl+K ctrl+S : keyboard shorcuts
 
-MOVING
+MOVING/COPYING
 alt+up/down : move line up/down
 alt+shift+down : copy line/lines up/down
 
 FOLDING
-ctrl+k ctrl+j : unfold all
-ctrl+k ctrl+0 : fold all
+ctrl+K ctrl+J : unfold all
+ctrl+K ctrl+0 : fold all
 
 FIND/REPLACE
-ctrl+f : find
-ctrl+r : replace 
+ctrl+F : find
+enter : find next
+shift+enter : find previous
+ctrl+R : replace
+Esc : close
+
+CHANGE CASE
+ctrl+K ctrl+U : uppercase
+ctrl+K ctrl+L : lowercase
+ctrl+shift+P
+search : transform
+
+
+EMMET CHEATSHEET 
+html, css code completion
+https://docs.emmet.io/cheat-sheet/

@@ -95,8 +95,6 @@ function Format-JS {
 }
 
 
-
-
 function Get-Alphabet {
   $chars = @();
   65..90 | ForEach-Object { $chars += [char]$_ };
@@ -113,15 +111,29 @@ function Format-HTML {
     [Parameter(Mandatory)]$List,
     [Parameter(Mandatory)]$Range,
     [Parameter(Mandatory)]$File,
-    [Parameter(Mandatory)]$Date
+    [Parameter(Mandatory)]$Date,
+    [Parameter(Mandatory)]$Page
   )
 
   $static = Get-Content .\static.html;
-  $snip1 = $static[0..16];
-  $snip2 = @();
-  $snip3 = $static[18..31];
-  $snip4 = (Add-Spaces 4) + "<div class=`"updated`">Updated: $Date</p>"
-  $snip5 = $static[33..35];
+  $snip1 = $static[0..13];
+
+  switch ($Page) {
+    1 {  $snip2 = (Add-Spaces 10) + 
+      "<label for=`"mySelect`" style=`"color:#000000;`">A-C:</label>" }
+    2 {  $snip2 = (Add-Spaces 10) + 
+      "<label for=`"mySelect`" style=`"color:#000000;`">D-J:</label>" }
+    3 {  $snip2 = (Add-Spaces 10) + 
+      "<label for=`"mySelect`" style=`"color:#000000;`">K-O:</label>" }
+    4 {  $snip2 = (Add-Spaces 10) + 
+      "<label for=`"mySelect`" style=`"color:#000000;`">P-Z:</label>" }
+  }
+
+  $snip3 = $static[15..16];
+  $snip4 = @();
+  $snip5 = $static[18..31];
+  $snip6 = (Add-Spaces 4) + "<div class=`"updated`">Updated: $Date</p>"
+  $snip7 = $static[33..35];
 
   for ($i = 0; $i -lt $Range.count; $i++) {
     $List | ForEach-Object {
@@ -129,14 +141,13 @@ function Format-HTML {
       $pattern = $Range[$i] + "*";
       if ($name -like $pattern) {
         $line = (Add-Spaces 10) + "<option>$name</option>";
-        $snip2 += $line;
+        $snip4 += $line;
       }
     } 
   }
-  $snippet = $snip1 + $snip2 + $snip3 + $snip4 + $snip5;
+  $snippet = $snip1 + $snip2 + $snip3 + $snip4 + $snip5 + $snip6 + $snip7;
   $snippet | out-file $File;
 }
-
 
 
 [System.Collections.ArrayList]$users = Import-CSV ".\users.csv"
@@ -158,10 +169,10 @@ $page2 = ".\page2.html"
 $page3 = ".\page3.html"
 $page4 = ".\page4.html"
 
-Format-HTML -Range $ac -List $users -File $index -Date "9/1"
-Format-HTML -Range $dj -List $users -File $page2 -Date "9/1"
-Format-HTML -Range $ko -List $users -File $page3 -Date "9/1"
-Format-HTML -Range $pz -List $users -File $page4 -Date "9/1"
+Format-HTML -Range $ac -List $users -File $index -Date "9/2" -Page 1
+Format-HTML -Range $dj -List $users -File $page2 -Date "9/2" -Page 2
+Format-HTML -Range $ko -List $users -File $page3 -Date "9/2" -Page 3
+Format-HTML -Range $pz -List $users -File $page4 -Date "9/2" -Page 4
 
 #TODO :
 #		push changes to github
